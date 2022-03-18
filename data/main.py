@@ -4,13 +4,12 @@ import sys
 import time
 import pyglet
 import os
-from threading import Thread
 if 'data' in os.getcwd():
     print("Используйте Runner.bat")
     time.sleep(5)
     sys.exit()
 def gif():
-    animation = pyglet.resource.animation('gif.gif')
+    animation = pyglet.resource.animation('shrekophone-shreksophone.gif')
     sprite = pyglet.sprite.Sprite(animation)
     win = pyglet.window.Window(width=sprite.width, height=sprite.height)
     green = 0, 1, 0, 1
@@ -21,8 +20,8 @@ def gif():
         sprite.draw()
     pyglet.app.run()
 def sound():
-    time.sleep(1)
     while True:
+        time.sleep(1)
         winsound.PlaySound('./data/file.wav', winsound.SND_LOOP)
 if __name__ == '__main__':
     p = Process(target=gif, args=())
